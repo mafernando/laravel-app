@@ -4,7 +4,7 @@
 
 Clone the repository.
 
-From inside the repo, run `docker-compose up` to spin up a Laravel app container and a MySQL db container.
+Run `docker-compose up` from inside the repository to deploy a Laravel app container and a MySQL db container.
 
 Attach to the app container using `docker exec`:
 
