@@ -4,7 +4,9 @@
 
 Clone the repository.
 
-Run `docker-compose up` from inside the repository to deploy a Laravel app container and a MySQL db container.
+Generate Dockerfile and docker-compose.yml and add them to the respository. 
+
+Then run `docker-compose up` from inside the repository to deploy a Laravel app container and a MySQL db container.
 
 Attach to the app container using `docker exec`:
 
