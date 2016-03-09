@@ -14,3 +14,5 @@ And run the following to migrate and seed the database:
 
 	$ php artisan migrate
 	$ php artisan db:seed
+
+The app should now be visible on port 8000 of your docker-machine IP address.
