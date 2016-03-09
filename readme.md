@@ -2,9 +2,11 @@
 
 ### Installation
 
-Clone the repository and then run `docker-compose up` to spin up a Laravel app container connected to a MySQL db container.
+Clone the repository.
 
-Attach to the app container using docker exec:
+From inside the repo, run `docker-compose up` to spin up a Laravel app container and a MySQL db container.
+
+Attach to the app container using `docker exec`:
 
 	$ docker exec -it laravelapp_app_1 /bin/bash
 
