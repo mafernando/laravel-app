@@ -4,18 +4,13 @@
 
 Clone the repository.
 
-Next, enter the project's root directory and install the project dependencies:
+Run `docker-compose up` from inside the repository to deploy a Laravel app container and a MySQL db container.
 
-    $ composer install
+Attach to the app container using `docker exec`:
 
-Next, configure your database (`config/database.php`).
+	$ docker exec -it laravelapp_app_1 /bin/bash
+
+And run the following to migrate and seed the database:
 
 	$ php artisan migrate
-
-Next, seed the database:
-
 	$ php artisan db:seed
-
-Finally, fire up the PHP development server:
-
-	$ php artisan servee
