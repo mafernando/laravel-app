@@ -1,0 +1,27 @@
+---
+version: '2'
+services:
+  common:
+    build: "."
+    environment:
+      DB_DEFAULT: mysql
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_DATABASE: app
+      DB_USERNAME: root
+      DB_PASSWORD: DDH4r6iLnbtfuLdqMLkKqA
+      LARAVEL_ENV: production
+      NODE_ENV: production
+  app:
+    extends:
+      service: common
+    links:
+    - db
+    ports:
+    - 80:80
+    command: "/usr/sbin/apache2ctl -D FOREGROUND"
+  db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_ROOT_PASSWORD: DDH4r6iLnbtfuLdqMLkKqA

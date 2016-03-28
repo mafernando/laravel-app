@@ -1,0 +1,37 @@
+{
+  "services": [
+    {
+      "name": "app",
+      "image": "",
+      "target_num_containers": 1,
+      "sequential_deployment": true,
+      "autorestart": "ALWAYS",
+      "autoredeploy": true,
+      "linked_to_service": [
+        {
+          "name": "db",
+          "to_service": "db"
+        }
+      ],
+      "run_command": "/usr/sbin/apache2 -D FOREGROUND",
+      "container_ports": [
+        {
+          "protocol": "tcp",
+          "inner_port": 80,
+          "published": true
+        }
+      ],
+      "container_envvars": [
+        {
+          "key": "NODE_ENV",
+          "value": "production"
+        }
+      ]
+    },
+    {
+      "name": "db",
+      "image": "mysql"
+    }
+  ],
+  "name": "mafernandolaravel-app"
+}
