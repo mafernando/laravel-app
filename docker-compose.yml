@@ -9,7 +9,7 @@ services:
       DB_HOST: db
       DB_DATABASE: app
       DB_USERNAME: root
-      DB_PASSWORD: M1dBFWcWCxnVHmEDvyq4iQ
+      DB_PASSWORD: 7UU9YKRj7n8mmEkXcRDtkQ
       LARAVEL_ENV: production
       NODE_ENV: production
   app:
@@ -24,5 +24,5 @@ services:
     image: mysql
     environment:
       MYSQL_DATABASE: app
-      MYSQL_ROOT_PASSWORD: M1dBFWcWCxnVHmEDvyq4iQ
+      MYSQL_ROOT_PASSWORD: 7UU9YKRj7n8mmEkXcRDtkQ
 
