@@ -14,17 +14,17 @@ RUN echo "export DB_DEFAULT='mysql'" >> /etc/apache2/envvars \
     && echo "export DB_HOST='db'" >> /etc/apache2/envvars \
     && echo "export DB_DATABASE='app'" >> /etc/apache2/envvars \
     && echo "export DB_USERNAME='root'" >> /etc/apache2/envvars \
-    && echo "export DB_PASSWORD='vLmdzbh3cEQixrTswq710Q'" >> /etc/apache2/envvars
+    && echo "export DB_PASSWORD='jcLPT1Cw4y0rSazNYPvXww'" >> /etc/apache2/envvars
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 COPY . /app/
 WORKDIR /app
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN rm /etc/apache2/sites-available/000-default.conf \
     && touch /etc/apache2/sites-available/000-default.conf \
     && echo '      <VirtualHost *:80>\n          DocumentRoot /app/public\n          <Directory /app/public>\n              Options -Indexes +FollowSymLinks +MultiViews\n              AllowOverride All\n              Require all granted\n          </Directory>\n          ErrorLog ${APACHE_LOG_DIR}/error.log\n          LogLevel warn\n          CustomLog ${APACHE_LOG_DIR}/access.log combined\n      </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 RUN npm install -g gulp && npm install gulp
 RUN rm -rf ./node_modules \
     && npm install --production
-RUN composer install --no-dev --prefer-source
+RUN composer install --prefer-source --no-interaction --no-dev
 RUN chown -R www-data:www-data /app
 
 EXPOSE 80
